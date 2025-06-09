@@ -1,0 +1,29 @@
+﻿<Window x:Class="EventRegistrationApp.RegistrarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистратор" Height="500" Width="400"
+        WindowStyle="None" AllowsTransparency="True" Background="White">
+    <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="Red" MouseLeftButtonDown="TitleBar_MouseDown">
+                <DockPanel>
+                    <TextBlock Text="Регистратор" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" Margin="10,0"/>
+                    <Button Content="X" Click="Close_Click" DockPanel.Dock="Right" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="{x:Null}" Margin="276,0,10,0"/>
+                </DockPanel>
+            </Border>
+
+            <StackPanel Grid.Row="1" Margin="20">
+                <TextBlock Text="Учёт посещений" FontSize="16" Margin="0,0,0,10"/>
+                <Button Content="Отметить явку" Click="MarkAttendanceButton_Click" Margin="0,10"/>
+                <ListBox x:Name="AttendanceListBox" ItemsSource="{Binding Attendances}" Margin="0,5"/>
+                <Button Content="Удалить" Click="DeleteAttendance_Click" HorizontalAlignment="Right" Width="100" Margin="0,5"/>
+                <Button Content="Назад" Click="BackButton_Click" Margin="0,10" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

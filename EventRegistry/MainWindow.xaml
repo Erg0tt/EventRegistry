@@ -1,0 +1,44 @@
+﻿<Window x:Class="EventRegistrationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор пользователя" 
+        Height="200" Width="300"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="White">
+    <StackPanel Margin="20,0,20,0" VerticalAlignment="Center" Height="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="Red" MouseLeftButtonDown="TitleBar_MouseDown">
+                <DockPanel>
+                    <TextBlock Text="Выбор пользователя" 
+                       VerticalAlignment="Center" 
+                       Foreground="White" 
+                       FontWeight="Bold"
+                       Margin="10,0"/>
+                    <Button Content="X"
+            Click="Close_Click"
+            DockPanel.Dock="Right"
+            Width="30" Height="30"
+            Background="Transparent"
+            Foreground="White"
+            BorderBrush="{x:Null}"
+            Margin="86,0,10,0"/>
+                </DockPanel>
+            </Border>
+
+            
+            <StackPanel Grid.Row="1" Margin="20" VerticalAlignment="Center">
+                <TextBlock Text="Выберите роль:" FontSize="16" Margin="0,0,0,10"/>
+                <Button Content="Организатор" Click="OrganizerButton_Click" Margin="0,5"/>
+                <Button Content="Участник" Click="ParticipantButton_Click" Margin="0,5"/>
+                <Button Content="Регистратор" Click="RegistrarButton_Click" Margin="0,5"/>
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+</Window>
