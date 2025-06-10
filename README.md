@@ -13,4 +13,3 @@
 - [Анализ рисков](docs/RISKS.md)
 - [Пример принятия заявки от пользователей](docs/REQUEST_SAMPLE.md)
 
-# EventRegistry
