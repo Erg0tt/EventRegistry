@@ -89,20 +89,20 @@
 
 Пример (App.xaml):
 
-xml
+```xml
 
 <Style TargetType="Button">
   <Setter Property="Margin" Value="5"/>
   <Setter Property="MinWidth" Value="100"/>
   <Setter Property="Padding" Value="10,5"/>
 </Style>
-
+```
 · Для списка используется ListBox с ItemTemplate, отображающие объекты c помощью ToString().
 
 6. Требования к данным
 6.1 Схема БД
 
-sql
+```sql
 
 CREATE TABLE Events (
   Id INT IDENTITY PRIMARY KEY,
@@ -126,6 +126,7 @@ CREATE TABLE Attendances (
   IsPresent BIT NOT NULL,
   UNIQUE (ParticipantId, EventId)
 );
+```
 
 6.2 Целостность данных
 · Уникальность Title+Date, Email, (ParticipantId+EventId).
@@ -136,18 +137,19 @@ CREATE TABLE Attendances (
 7.1 Слой доступа (DAL)
 · Отделён через интерфейсы:
 
-csharp
+```csharp
 
 interface IEventRepository {
   Task<IEnumerable<Event>> GetAllAsync();
   Task AddAsync(Event e);
   Task<bool> ExistsAsync(string title, DateTime date);
 }
-· Строка подключения берётся из ConfigurationManager.
-· Используется System.Data.SqlClient.
+```
+· Строка подключения берётся из ```ConfigurationManager.```
+· Используется ```System.Data.SqlClient.```
 
 7.2 UI-слой (WPF MVVM)
-· ViewModels с ObservableCollection и ICommand.
+· ViewModels с ```ObservableCollection и ICommand.```
 · Привязка: XAML → VM → DAL.
 
 7.3 Библиотеки
