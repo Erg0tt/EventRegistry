@@ -21,13 +21,14 @@
 1.2 Документация (по ГОСТ 19.*)
 
 · Каждый модуль снабжён заголовком:
-
+```
 //---------------------------------------------------------------------
 // Module: EventRepository.cs
 // Purpose: CRUD-операции для Events
 // Author:  Иванов И.И.
 //---------------------------------------------------------------------
 · Основные разделы:
+```
 
 1.Назначение и интеграция модуля.
 2.Интерфейсы (методы, параметры).
@@ -55,11 +56,13 @@
 
 · Команда сборки:
 
-bash 
+```bash 
+
 dotnet restore
 dotnet build --configuration Release
 dotnet test --configuration Release
 dotnet tool run dotnet-format --check
+```
 
 · CI: GitHub Actions / Azure Pipelines — сборка + тесты + dotnet-format.
 
@@ -79,11 +82,12 @@ dotnet tool run dotnet-format --check
 4. Конфигурация и миграции БД
 · Строка подключения лежит в App.config:
 
-xml
+```xml
 
 <connectionStrings>
   <add name="DefaultConnection" connectionString="Data Source=.;Initial Catalog=EventRegistry;Integrated Security=True"/>
 </connectionStrings>
+```
 
 · Миграции – через скрипты Migrations/XXX_CreateSchema.sql либо EF Core Migrations.
 
